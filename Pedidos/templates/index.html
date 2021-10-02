@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+{% block body %}
+<div class="container">
+ <a class="btn btn-primary" href="{{url_for('pedido')}}" role="button">Adicionar novo pedido</a>
+</div>
+
+<div class="container">
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Cliente</th>
+      <th scope="col">Endereço</th>
+      <th scope="col">Pedido</th>
+        <th scope="col">Ação</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  {% for i, linha in pedidos.iterrows() %}
+    <tr>
+      <th scope="row">{{i}}</th>
+      <td>{{linha['nome']}}</td>
+      <td>{{linha['endereco']}}</td>
+      <td>{{linha['pedido']}}</td>
+        <td>
+            <a type="button" href ="{{url_for('editar', id = linha['id'])}}" class="btn btn-outline-primary">Editar</a>
+            <a type="button" href ="{{url_for('excluir', id = linha['id'])}}" class="btn btn-outline-danger">Apagar</a>
+        </td>
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+    </div>
+
+{% endblock %}
+

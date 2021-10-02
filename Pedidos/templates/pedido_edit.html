@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %} Pedidos {% endblock %}
+{% block body %}
+
+ <div class="container">
+<form action="#" method="post">
+  <div class="form-group">
+    <label name="nome">Cliente</label>
+    <input type="text" class="form-control" name="nome" value = "{{pedido['nome'].values[0] }}">
+     <label>Endereço</label>
+    <input type="text" class="form-control" name="endereco" value = "{{pedido['endereco'].values[0] }}">
+    <label>Pedido</label>
+    <input type="text" class="form-control" name="pedido" value = "{{pedido['pedido'].values[0] }}">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+ </div>
+{% endblock %}

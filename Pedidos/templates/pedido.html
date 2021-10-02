@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %} Pedidos {% endblock %}
+{% block body %}
+
+ <div class="container">
+<form action="#" method="post">
+  <div class="form-group">
+    <label name="nome">Cliente</label>
+    <input type="text" class="form-control" name="nome" placeholder="Digite o nome do cliente">
+     <label>Endereço</label>
+    <input type="text" class="form-control" name="endereco" placeholder="Digite o endereço do cliente">
+    <label>Pedido</label>
+    <input type="text" class="form-control" name="pedido" placeholder="Digite o Pedido do cliente">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+ </div>
+{% endblock %}
